@@ -13,6 +13,8 @@
 		632317D727905F6D00E2E399 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 632317D527905F6D00E2E399 /* Main.storyboard */; };
 		632317D927905F6E00E2E399 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 632317D827905F6E00E2E399 /* Assets.xcassets */; };
 		632317DC27905F6E00E2E399 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 632317DA27905F6E00E2E399 /* LaunchScreen.storyboard */; };
+		632317E427905F7E00E2E399 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632317E327905F7E00E2E399 /* Card.swift */; };
+		632317E62790607100E2E399 /* Consentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632317E52790607100E2E399 /* Consentration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		632317D827905F6E00E2E399 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		632317DB27905F6E00E2E399 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		632317DD27905F6E00E2E399 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		632317E327905F7E00E2E399 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		632317E52790607100E2E399 /* Consentration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consentration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +63,12 @@
 				632317CF27905F6D00E2E399 /* AppDelegate.swift */,
 				632317D127905F6D00E2E399 /* SceneDelegate.swift */,
 				632317D327905F6D00E2E399 /* ViewController.swift */,
+				632317E52790607100E2E399 /* Consentration.swift */,
 				632317D527905F6D00E2E399 /* Main.storyboard */,
 				632317D827905F6E00E2E399 /* Assets.xcassets */,
 				632317DA27905F6E00E2E399 /* LaunchScreen.storyboard */,
 				632317DD27905F6E00E2E399 /* Info.plist */,
+				632317E327905F7E00E2E399 /* Card.swift */,
 			);
 			path = Consentrationcs193p2017;
 			sourceTree = "<group>";
@@ -141,6 +147,8 @@
 				632317D427905F6D00E2E399 /* ViewController.swift in Sources */,
 				632317D027905F6D00E2E399 /* AppDelegate.swift in Sources */,
 				632317D227905F6D00E2E399 /* SceneDelegate.swift in Sources */,
+				632317E62790607100E2E399 /* Consentration.swift in Sources */,
+				632317E427905F7E00E2E399 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
