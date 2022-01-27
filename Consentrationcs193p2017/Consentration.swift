@@ -54,7 +54,10 @@ class Concentration {
             let card = Card()
             cards += [card, card]
         }
-        
+        for _ in 1...cards.count {
+            let randomIndex = Int.random(in: 0..<cards.count)
+            cards.swapAt(0, randomIndex)
+        }
     }
     
 }
