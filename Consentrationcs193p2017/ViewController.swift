@@ -8,20 +8,23 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var emojiChoices = [String]()
-    var emoji = [Int: String]()
-    var emojiThemes = [
-        1: ["🐕‍🦺", "🐓", "🐈", "🐈‍⬛", "🐏", "🐂", "🐄"],
-        2: ["🐊", "🦭", "🦈", "🐳", "🦀", "🦞", "🐡"],
-        3: ["🦜", "🦢", "🕊", "🦤", "🦚", "🦩", "🦃"],
-        4: ["🐲", "🌿", "🌵", "🌲", "🌳", "🌴", "🪴"],
-        5: ["🥝", "🍋", "🍒", "🍊", "🥦", "🌶", "🥥"],
-        6: ["🍩", "🍫", "🍯", "🍦", "🍡", "🍧", "🍰"]
+    var numberOfPairsOfCards: Int {
+        (cardButtons.count + 1) / 2
+    }
+    private var emojiChoices = ""
+    private var emoji = [Card: String]()
+    private var emojiThemes = [
+        0: "🐕‍🦺🐓🐈🐈‍⬛🐏🐂🐄",
+        1: "🐊🦭🦈🐳🦀🦞🐡",
+        2: "🦜🦢🕊🦤🦚🦩🦃",
+        3: "🐲🌿🌵🌲🌳🌴🪴",
+        4: "🥝🍋🍒🍊🥦🌶🥥",
+        5: "🍩🍫🍯🍦🍡🍧🍰"
     ]
     private var themeIndex = 0 {
         didSet {
-            emojiChoices = emojiThemes[keys[themeIndex]] ?? []
-            emoji = [Int: String]()
+            emojiChoices = emojiThemes[themeIndex] ?? ""
+            emoji = [Card: String]()
         }
     }
     private var keys: [Int] {return Array(emojiThemes.keys)}
@@ -40,21 +43,21 @@ class ViewController: UIViewController {
     @IBOutlet var cardButtons: [UIButton]!
 
     
-    func emoji(for card: Card) -> String {
-        if emoji[card.identifier] == nil, emojiChoices.count > 0 {
-            let randomIndex = Int.random(in: 0..<emojiChoices.count)
-            emoji[card.identifier] = emojiChoices.remove(at: randomIndex)
+    private func emoji(for card: Card) -> String {
+        if emoji[card] == nil, emojiChoices.count > 0 {
+            let randomStringIndex = emojiChoices.index(emojiChoices.startIndex, offsetBy: Int.random(in: 0..<emojiChoices.count))
+            emoji[card] = String(emojiChoices.remove(at: randomStringIndex))
         }
-        return emoji[card.identifier] ?? "?"
+        return emoji[card] ?? "?"
     }
-    lazy var game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
+    private lazy var game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
     
-    var flipCount = 0 {
+    private(set) var flipCount = 0 {
         didSet {
             flipCountLabel.text = "Flips: \(flipCount)"
         }
     }
-      @IBAction func touchCard(_ sender: UIButton) {
+      @IBAction private func touchCard(_ sender: UIButton) {
         flipCount += 1
         if let cardNumber = cardButtons.firstIndex(of: sender) {
             game.chooseCard(at: cardNumber)
@@ -80,6 +83,7 @@ class ViewController: UIViewController {
 
     
     func newGame() {
+        
         game.score = 0
         flipCount = 0
         for index in game.cards.indices {

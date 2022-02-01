@@ -64,11 +64,11 @@
 				632317D127905F6D00E2E399 /* SceneDelegate.swift */,
 				632317D327905F6D00E2E399 /* ViewController.swift */,
 				632317E52790607100E2E399 /* Consentration.swift */,
+				632317E327905F7E00E2E399 /* Card.swift */,
 				632317D527905F6D00E2E399 /* Main.storyboard */,
 				632317D827905F6E00E2E399 /* Assets.xcassets */,
 				632317DA27905F6E00E2E399 /* LaunchScreen.storyboard */,
 				632317DD27905F6E00E2E399 /* Info.plist */,
-				632317E327905F7E00E2E399 /* Card.swift */,
 			);
 			path = Consentrationcs193p2017;
 			sourceTree = "<group>";
